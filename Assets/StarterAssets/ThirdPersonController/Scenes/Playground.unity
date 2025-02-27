@@ -348,6 +348,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 746764714}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b6340c8a32497c49b7e2af956e922e4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 746764715}
   m_SourcePrefab: {fileID: 100100000, guid: 2b6340c8a32497c49b7e2af956e922e4, type: 3}
 --- !u!1 &109791103
 GameObject:
@@ -1348,6 +1352,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_EventSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 1992104595683069851, guid: f0271df749728104eac22c3d897fd8ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8063073397250431797, guid: f0271df749728104eac22c3d897fd8ce,
         type: 3}
       propertyPath: m_RootOrder
@@ -1674,6 +1683,21 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2371852036953700318, guid: df0d6563fa8a91f4eae3ed4fb98b959f,
     type: 3}
   poolSize: 10
+--- !u!114 &746764715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746764706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9656c17266a23e4da260843f1444dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyMax: 99
+  reloadCooldown: 0
+  recoveryAmount: 0
 --- !u!1 &844165169
 GameObject:
   m_ObjectHideFlags: 0

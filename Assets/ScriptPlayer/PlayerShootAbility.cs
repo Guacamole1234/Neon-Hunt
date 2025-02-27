@@ -10,8 +10,7 @@ public class PlayerShootAbility : MonoBehaviour
     public float fireRate = 0.2f;
     private float nextFireTime = 0f;
     private Animator animator;
-
-
+    
 
     private void Start()
     {
@@ -27,22 +26,39 @@ public class PlayerShootAbility : MonoBehaviour
         }
     }
 
+    public bool CanShoot ()
+    {
+        bool shot = true;
+        EnergySystem energySystem = GetComponent<EnergySystem>();
+        if (energySystem.energyMax < 30f)
+        {
+            shot = false;
+        }
+        else if (energySystem.energyMax > 30f)
+        {
+            shot = true;
+        }
+        if (shot == true) 
+        {
+            //Shoot;
+        }
+        return shot;
+    }
+
     private void Shoot()
     {
+        EnergySystem energySystem = GetComponent<EnergySystem>();
         FireBullet(leftCannon);
         FireBullet(rightCannon);
-
-        // Instancia el efecto de disparo en los cañones
-  
- 
+        energySystem.energyMax = energySystem.energyMax - 33f;
         
+        // Instancia el efecto de disparo en los cañones
     }
 
     private void FireBullet(Transform cannon)
     {
         GameObject bullet = GenericPool2.Instance.GetBullet(cannon.position, cannon.rotation * Quaternion.Euler(90, 180, 0));
         BulletBehaviour bulletScript = bullet.GetComponent<BulletBehaviour>();
-
 
     }
 
@@ -57,14 +73,6 @@ public class PlayerShootAbility : MonoBehaviour
         EventSystem.current.RaycastAll(eventData, results);
         return results.Count > 0;
     }
-
-
-  
-
-
-
-
-
 
 
 }
